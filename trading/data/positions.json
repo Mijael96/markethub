@@ -1,0 +1,189 @@
+[
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-carni-al30",
+    "set_id": "set-carnicero",
+    "symbol": "AL30",
+    "net_qty": 5250000.0,
+    "avg_price": 64118.4251,
+    "mark_price": 65056.2083,
+    "market_value": 3415450933.62,
+    "unrealized_pnl": 49233614.66
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-carni-gd30",
+    "set_id": "set-carnicero",
+    "symbol": "GD30",
+    "net_qty": -3050000.0,
+    "avg_price": 70350.0919,
+    "mark_price": 69500.2144,
+    "market_value": -2119756540.49,
+    "unrealized_pnl": 25921261.55
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-carni-aapl",
+    "set_id": "set-carnicero",
+    "symbol": "AAPL.BA",
+    "net_qty": -110.0,
+    "avg_price": 29805.0,
+    "mark_price": 29409.2846,
+    "market_value": -3235021.31,
+    "unrealized_pnl": 43528.69
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-carni-meli",
+    "set_id": "set-carnicero",
+    "symbol": "MELI.BA",
+    "net_qty": -730.0,
+    "avg_price": 41322.1066,
+    "mark_price": 41773.4907,
+    "market_value": -30494648.19,
+    "unrealized_pnl": -329510.36
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-tobo-mepccl",
+    "set_id": "set-tobogan",
+    "symbol": "MEP",
+    "net_qty": 275000.0,
+    "avg_price": 1199.3956,
+    "mark_price": 1212.9307,
+    "market_value": 333555947.02,
+    "unrealized_pnl": 3722143.67
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-tobo-mepccl",
+    "set_id": "set-tobogan",
+    "symbol": "CCL",
+    "net_qty": -100000.0,
+    "avg_price": 1216.6312,
+    "mark_price": 1206.5686,
+    "market_value": -120656860.39,
+    "unrealized_pnl": 1006255.38
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-tobo-maycable",
+    "set_id": "set-tobogan",
+    "symbol": "USD.MAY",
+    "net_qty": 155000.0,
+    "avg_price": 1067.3159,
+    "mark_price": 1058.8736,
+    "market_value": 164125415.45,
+    "unrealized_pnl": -1308548.37
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-tobo-maycable",
+    "set_id": "set-tobogan",
+    "symbol": "CCL",
+    "net_qty": 175000.0,
+    "avg_price": 1205.368,
+    "mark_price": 1206.5686,
+    "market_value": 211149505.68,
+    "unrealized_pnl": 210099.48
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-doble-aapl",
+    "set_id": "set-doble",
+    "symbol": "AAPL.BA",
+    "net_qty": -490.0,
+    "avg_price": 29649.9918,
+    "mark_price": 29409.2846,
+    "market_value": -14410549.46,
+    "unrealized_pnl": 117946.54
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-doble-aapl",
+    "set_id": "set-doble",
+    "symbol": "AAPL",
+    "net_qty": 230.0,
+    "avg_price": 226.0596,
+    "mark_price": 227.765,
+    "market_value": 52385.96,
+    "unrealized_pnl": 392.24
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-doble-aapl",
+    "set_id": "set-doble",
+    "symbol": "CCL",
+    "net_qty": -85000.0,
+    "avg_price": 1213.8401,
+    "mark_price": 1206.5686,
+    "market_value": -102558331.33,
+    "unrealized_pnl": 618081.39
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-doble-tsla",
+    "set_id": "set-doble",
+    "symbol": "TSLA.BA",
+    "net_qty": 1075.0,
+    "avg_price": 19623.1149,
+    "mark_price": 20419.2829,
+    "market_value": 21950729.14,
+    "unrealized_pnl": 855880.65
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-doble-tsla",
+    "set_id": "set-doble",
+    "symbol": "TSLA",
+    "net_qty": 290.0,
+    "avg_price": 329.4346,
+    "mark_price": 329.6905,
+    "market_value": 95610.24,
+    "unrealized_pnl": 74.21
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-doble-tsla",
+    "set_id": "set-doble",
+    "symbol": "CCL",
+    "net_qty": 130000.0,
+    "avg_price": 1203.4982,
+    "mark_price": 1206.5686,
+    "market_value": 156853918.5,
+    "unrealized_pnl": 399149.77
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-fierro-dlr",
+    "set_id": "set-fierro",
+    "symbol": "DLR/JUN26",
+    "net_qty": 5.0,
+    "avg_price": 1170.1286,
+    "mark_price": 1156.6086,
+    "market_value": 5783.04,
+    "unrealized_pnl": -67.6
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-fierro-oro",
+    "set_id": "set-fierro",
+    "symbol": "ORO/AGO26",
+    "net_qty": 48.0,
+    "avg_price": 2417.3935,
+    "mark_price": 2430.4052,
+    "market_value": 116659.45,
+    "unrealized_pnl": 624.56
+  },
+  {
+    "ts": "2026-06-18T20:00:00Z",
+    "exec_id": "exec-fierro-rfx",
+    "set_id": "set-fierro",
+    "symbol": "RFX20/SEP26",
+    "net_qty": -22.0,
+    "avg_price": 2440279.5455,
+    "mark_price": 2434703.6372,
+    "market_value": -53563480.02,
+    "unrealized_pnl": 122669.98
+  }
+]
