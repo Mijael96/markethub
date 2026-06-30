@@ -93,7 +93,6 @@ class TradingService:
                 consolidated_pnl += pnl_state.get('total', pnl_state.get('total_pnl', 0.0))
                 consolidated_trades += historical_trades
                 
-
                 # Mapear desagregado de salud por ejecución individual
                 executions_list.append({
                     "exec_id": exec_id,
