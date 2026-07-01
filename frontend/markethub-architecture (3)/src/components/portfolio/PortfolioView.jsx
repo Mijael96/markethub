@@ -36,7 +36,7 @@ export default function PortfolioView({
     const executions = set.executions ?? [];
     return {
       set,
-      executions
+      executions,
     };
   });
 
@@ -47,15 +47,12 @@ export default function PortfolioView({
   }));
 
   const healthRows = strategySets.flatMap((set) =>
-    getExecutionsBySet(set.id).map((execution) => {
-      const stats = statAt(execution.id, simIndex);
-      return {
-        execution,
-        pnl: pnlAt(execution.id),
-        trades: stats.trades,
-        winRate: stats.win_rate,
-      };
-    })
+    set.executions.map((execution) => ({
+      execution,
+      strategyId: set.id,
+      pnl: execution.total_pnl,
+      trades: execution.total_trades,
+    }))
   );
 
   return (
