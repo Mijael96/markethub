@@ -4,7 +4,6 @@ import { useSessionClock } from "./hooks/useSessionClock";
 import { useBaseline } from "./hooks/useBaseline";
 
 import TopBar from "./components/layout/TopBar";
-import TickerTape from "./components/layout/TickerTape";
 import Sidebar from "./components/layout/Sidebar";
 
 import PortfolioView from "./components/portfolio/PortfolioView";
@@ -46,6 +45,8 @@ export default function App() {
           onSelectSet: setActiveView,
           simIndex,
           currentTs,
+          simulationDatetime: baseline?.simulation_datetime,
+          strategySets: baseline?.strategy_sets ?? [],
         }
       : {};
 
@@ -65,8 +66,6 @@ export default function App() {
         sessionDone={sessionDone}
         simulationDatetime={baseline?.simulation_datetime}
       />
-
-      <TickerTape tick={tick} simIndex={simIndex} />
 
       <div style={{ display: "flex", flex: 1 }}>
         <Sidebar activeView={activeView} onSelectView={setActiveView} />
