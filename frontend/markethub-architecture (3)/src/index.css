@@ -1,0 +1,22 @@
+/**
+ * index.css
+ * Reset mínimo a nivel de documento. Sin esto, <body> conserva su margin
+ * por defecto del navegador (~8px) y se ve un borde blanco alrededor de
+ * la app, porque el fondo de <html>/<body> nunca se pintó del color del
+ * dashboard.
+ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0A0C10; /* mismo valor que COLORS.bg en src/config/theme.js */
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
