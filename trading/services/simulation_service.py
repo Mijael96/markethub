@@ -260,3 +260,45 @@ class SimulationService:
 
 
         return result
+
+    @classmethod
+    def get_historical_trades(cls, cutoff_time_str="2026-06-18T15:00:00Z", limit=40):
+        """
+        Obtiene los últimos N trades ejecutados justo antes de la hora de corte,
+        ordenados del más reciente al más antiguo.
+        """
+        cutoff_time = cls._parse_timestamp(cutoff_time_str)
+        
+        trades = cls._load_json_file('trades.json')
+        stats = cls._load_json_file('stats.json')
+
+        # Diccionario rápido para mapear el ID de la ejecución a su nombre real
+        stats_by_exec = {stat['exec_id']: stat.get('name', 'Estrategia Desconocida') for stat in stats}
+
+        valid_trades = []
+        for trade in trades:
+            trade_ts = cls._parse_timestamp(trade['ts'])
+            
+            # Filtramos solo los trades que ocurrieron ANTES o exactamente en la hora de corte
+            if trade_ts <= cutoff_time:
+                # Resolvemos el problema del PnL buscando ambas claves por seguridad
+                pnl_value = trade.get("realized_pnl", trade.get("pnl", 0.0))
+                
+                valid_trades.append({
+                    "id": trade.get("id", f"T-{trade_ts.timestamp()}"),
+                    "ts": trade.get("ts"),
+                    "time_str": trade_ts.strftime("%H:%M:%S"),
+                    "exec_id": trade.get("exec_id"),
+                    "exec_name": stats_by_exec.get(trade.get("exec_id"), "Estrategia de Mercado"),
+                    "symbol": trade.get("symbol"),
+                    "side": trade.get("side"),
+                    "qty": trade.get("qty"),
+                    "price": trade.get("price"),
+                    "realized_pnl": pnl_value
+                })
+
+        # Ordenar la lista por timestamp de manera descendente (el más reciente primero)
+        valid_trades.sort(key=lambda x: x['ts'], reverse=True)
+
+        # Retornar únicamente la cantidad solicitada (limit)
+        return valid_trades[:limit]

@@ -27,3 +27,25 @@ class StrategyBaselineResponseSerializer(serializers.Serializer):
     total_executions = serializers.IntegerField()
     active_executions = serializers.IntegerField()
     executions = ExecutionBaselineSerializer(many=True)
+
+class HistoricalTradeSerializer(serializers.Serializer):
+
+    id = serializers.CharField()
+
+    ts = serializers.CharField()
+
+    time_str = serializers.CharField()
+
+    exec_id = serializers.CharField()
+
+    exec_name = serializers.CharField()
+
+    symbol = serializers.CharField()
+
+    side = serializers.CharField()
+
+    qty = serializers.FloatField()
+
+    price = serializers.FloatField()
+
+    realized_pnl = serializers.FloatField()
