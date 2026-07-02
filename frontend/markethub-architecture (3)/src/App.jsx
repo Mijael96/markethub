@@ -3,6 +3,7 @@ import { COLORS, FONT_BODY } from "./config/theme";
 import { useSessionClock } from "./hooks/useSessionClock";
 import { useBaseline } from "./hooks/useBaseline";
 import { useHistoricalTrades } from "./hooks/useHistoricalTrades";
+import { useSimulationSocket } from "./hooks/useSimulationSocket";
 
 import TopBar from "./components/layout/TopBar";
 import Sidebar from "./components/layout/Sidebar";
@@ -32,6 +33,8 @@ export default function App() {
 
   const { trades } = useHistoricalTrades();
 
+  const { tickFromSocket, isConnected } = useSimulationSocket();
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setTick((t) => t + 1);
@@ -42,13 +45,15 @@ export default function App() {
 
   const ActiveViewComponent = VIEW_REGISTRY[activeView] ?? PortfolioView;
 
+  const simulationDatetime = tickFromSocket?.simulated_time_iso ?? baseline?.simulation_datetime;
+
   const viewProps =
     activeView === "portfolio"
       ? {
           onSelectSet: setActiveView,
           simIndex,
           currentTs,
-          simulationDatetime: baseline?.simulation_datetime,
+          simulationDatetime: simulationDatetime,
           strategySets: baseline?.strategy_sets ?? [],
           historicalTrades: trades,
         }
@@ -68,7 +73,7 @@ export default function App() {
       <TopBar
         currentTs={currentTs}
         sessionDone={sessionDone}
-        simulationDatetime={baseline?.simulation_datetime}
+        simulationDatetime={simulationDatetime}
       />
 
       <div style={{ display: "flex", flex: 1 }}>
