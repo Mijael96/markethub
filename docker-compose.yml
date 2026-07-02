@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # 1. El motor de base de datos para los WebSockets
+  redis:
+    image: redis:7-alpine
+    container_name: markethub_redis
+    ports:
+      - "6379:6379"
+
+  # 2. El Backend de Django
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: markethub_backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  # 3. El Frontend de React
+  frontend:
+    build:
+      context: ./frontend/markethub-frontend
+      dockerfile: Dockerfile
+    container_name: markethub_frontend
+    volumes:
+      - ./frontend/markethub-frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api/v1
+    depends_on:
+      - backend
