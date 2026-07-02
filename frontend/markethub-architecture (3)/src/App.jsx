@@ -27,13 +27,15 @@ export default function App() {
 
   const [tick, setTick] = useState(0);
 
-  const { simIndex, currentTs, sessionDone } = useSessionClock();
+  const { simIndex, currentTs } = useSessionClock();
 
   const { baseline } = useBaseline();
 
   const { trades } = useHistoricalTrades();
 
   const { tickFromSocket, isConnected } = useSimulationSocket();
+
+  const [liveTrades, setLiveTrades] = React.useState([]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -43,9 +45,37 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
+  React.useEffect(() => {
+    setLiveTrades(trades);
+  }, [trades]);
+
+  React.useEffect(() => {
+    if (!tickFromSocket?.new_trades?.length) {
+      return;
+    }
+
+    setLiveTrades(previous => {
+      const map = new Map();
+  
+      [...tickFromSocket.new_trades, ...previous].forEach(trade => {
+          map.set(trade.id, trade);
+      });
+  
+      return [...map.values()]
+          .sort((a, b) => new Date(b.ts) - new Date(a.ts))
+          .slice(0, 40);
+    });
+  }, [tickFromSocket]);
+
   const ActiveViewComponent = VIEW_REGISTRY[activeView] ?? PortfolioView;
 
-  const simulationDatetime = tickFromSocket?.simulated_time_iso ?? baseline?.simulation_datetime;
+  const simulationDatetime =
+    tickFromSocket?.simulated_time_iso ?? baseline?.simulation_datetime;
+
+  const strategySets =
+    tickFromSocket?.strategy_sets ?? baseline?.strategy_sets ?? [];
+
+  // const liveTrades = tickFromSocket?.new_trades ?? trades ?? [];
 
   const viewProps =
     activeView === "portfolio"
@@ -54,8 +84,8 @@ export default function App() {
           simIndex,
           currentTs,
           simulationDatetime: simulationDatetime,
-          strategySets: baseline?.strategy_sets ?? [],
-          historicalTrades: trades,
+          strategySets,
+          historicalTrades: liveTrades,
         }
       : {};
 
@@ -70,11 +100,7 @@ export default function App() {
         flexDirection: "column",
       }}
     >
-      <TopBar
-        currentTs={currentTs}
-        sessionDone={sessionDone}
-        simulationDatetime={simulationDatetime}
-      />
+      <TopBar currentTs={currentTs} simulationDatetime={simulationDatetime} />
 
       <div style={{ display: "flex", flex: 1 }}>
         <Sidebar activeView={activeView} onSelectView={setActiveView} />

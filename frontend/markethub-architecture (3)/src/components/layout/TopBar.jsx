@@ -5,7 +5,7 @@ import { COLORS, FONT_DISPLAY, FONT_MONO } from "../../config/theme";
 
 import { fmtDate, fmtTimeSession } from "../../utils/formatters";
 
-export default function TopBar({ currentTs, sessionDone, simulationDatetime }) {
+export default function TopBar({ currentTs, simulationDatetime }) {
 
   return (
     <div
@@ -77,7 +77,7 @@ export default function TopBar({ currentTs, sessionDone, simulationDatetime }) {
             gap: 6,
             fontFamily: FONT_MONO,
             fontSize: 12,
-            color: sessionDone ? COLORS.mutedDim : COLORS.pos,
+            color: COLORS.pos,
           }}
         >
           <span
@@ -86,12 +86,12 @@ export default function TopBar({ currentTs, sessionDone, simulationDatetime }) {
               height: 6,
               borderRadius: 99,
 
-              background: sessionDone ? COLORS.mutedDim : COLORS.pos,
+              background: COLORS.pos,
 
-              boxShadow: sessionDone ? "none" : `0 0 6px ${COLORS.pos}`,
+              boxShadow: `0 0 6px ${COLORS.pos}`,
             }}
           />
-          {sessionDone ? "SESIÓN CERRADA" : "HORA DE SESIÓN"}·{" "}
+          {"HORA DE SESIÓN"}·{" "}
           {fmtTimeSession(simulationDatetime)}
         </span>
 

@@ -3,7 +3,13 @@ import { COLORS, FONT_MONO } from "../../config/theme";
 import Panel from "../common/Panel";
 import { fmtTime, fmtNum, fmtARS } from "../../utils/formatters";
 
-const COLUMNS = "90px 1fr 70px 90px 70px 100px";
+const COLUMNS = `
+  90px
+  minmax(280px, 2fr)
+  90px
+  120px
+  100px
+`;
 
 export default function LiveTapePanel({ trades }) {
   return (
@@ -36,7 +42,6 @@ export default function LiveTapePanel({ trades }) {
           <span>Símbolo</span>
           <span>Precio</span>
           <span>Cant.</span>
-          <span>Δ PnL</span>
         </div>
         {trades.map((t) => (
           <div
@@ -67,14 +72,6 @@ export default function LiveTapePanel({ trades }) {
               {t.side === "buy" ? "▲" : "▼"} {fmtNum(t.price, 1)}
             </span>
             <span style={{ color: COLORS.muted }}>{fmtNum(t.qty)}</span>
-            <span
-              style={{
-                color: t.realized_pnl >= 0 ? COLORS.pos : COLORS.neg,
-              }}
-            >
-              {t.realized_pnl >= 0 ? "+" : ""}
-              {fmtARS(t.realized_pnl)}
-            </span>
           </div>
         ))}
         {trades.length === 0 && (
