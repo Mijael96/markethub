@@ -9,17 +9,9 @@ import TopBar from "./components/layout/TopBar";
 import Sidebar from "./components/layout/Sidebar";
 
 import PortfolioView from "./components/portfolio/PortfolioView";
-import CarniceroView from "./components/strategies/CarniceroView";
-import ToboganView from "./components/strategies/ToboganView";
-import DobleView from "./components/strategies/DobleView";
-import FierroView from "./components/strategies/FierroView";
 
 const VIEW_REGISTRY = {
   portfolio: PortfolioView,
-  "set-carnicero": CarniceroView,
-  "set-tobogan": ToboganView,
-  "set-doble": DobleView,
-  "set-fierro": FierroView,
 };
 
 export default function App() {

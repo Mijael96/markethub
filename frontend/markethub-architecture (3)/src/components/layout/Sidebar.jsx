@@ -2,16 +2,8 @@ import React from "react";
 import { Activity, Beef, Waves, GitCompareArrows, Flame } from "lucide-react";
 import { COLORS, FONT_BODY, FONT_MONO } from "../../config/theme";
 
-/**
- * Catálogo de navegación. Vive acá (y no hardcodeado en el render) para que
- * agregar/quitar una vista sea editar un array, no reescribir el JSX.
- */
 export const NAV_ITEMS = [
-  { id: "portfolio", label: "Portafolio", icon: Activity },
-  { id: "set-carnicero", label: "El Carnicero", icon: Beef, color: COLORS.carnicero },
-  { id: "set-tobogan", label: "Tobogán Cable", icon: Waves, color: COLORS.tobogan },
-  { id: "set-doble", label: "Doble o Nada", icon: GitCompareArrows, color: COLORS.doble },
-  { id: "set-fierro", label: "Fierro Caliente", icon: Flame, color: COLORS.fierro },
+  { id: "portfolio", label: "Portafolio", icon: Activity }
 ];
 
 export default function Sidebar({ activeView, onSelectView }) {

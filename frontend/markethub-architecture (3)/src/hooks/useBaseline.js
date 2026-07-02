@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-const BASELINE_URL = "http://127.0.0.1:8000/api/v1/trading/baseline/";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
+const BASELINE_URL = `${API_BASE_URL}/trading/baseline/`;
 
 export function useBaseline() {
   const [baseline, setBaseline] = useState(null);

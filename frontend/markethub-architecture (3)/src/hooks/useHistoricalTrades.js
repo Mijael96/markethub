@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-const URL = "http://127.0.0.1:8000/api/v1/trading/historical-trades/";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
+const URL = `${API_BASE_URL}/trading/historical-trades/`;
 
 export function useHistoricalTrades() {
   const [trades, setTrades] = useState([]);

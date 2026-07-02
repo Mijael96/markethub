@@ -1,5 +1,4 @@
 import React from "react";
-import { ChevronRight } from "lucide-react";
 import { COLORS, FONT_DISPLAY, FONT_MONO, SET_META } from "../../config/theme";
 import PnlTag from "../common/PnlTag";
 
@@ -19,7 +18,6 @@ export default function SetSummaryCard({
     <div
       onClick={onClick}
       style={{
-        cursor: "pointer",
         background: COLORS.panel,
         border: `1px solid ${isRecentlyActive ? meta.color : COLORS.hairline}`,
         borderRadius: 4,
@@ -76,7 +74,6 @@ export default function SetSummaryCard({
             {set.display_type}
           </div>
         </div>
-        <ChevronRight size={16} color={COLORS.mutedDim} />
       </div>
       <div style={{ marginTop: 18 }}>
         <PnlTag value={pnl} size={19} />
