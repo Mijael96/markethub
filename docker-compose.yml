@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  # 1. El motor de base de datos para los WebSockets
+  # 1. El motor de base de datos para los WebSockets (Cambiado a v6 para evitar timeouts)
   redis:
-    image: redis:7-alpine
+    image: redis:6-alpine
     container_name: markethub_redis
     ports:
       - "6379:6379"
