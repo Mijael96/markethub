@@ -40,10 +40,10 @@ export default function PortfolioView({
     };
   });
 
-  const comparisonData = setSummaries.map((s) => ({
-    name: SET_META[s.set.id].short,
-    pnl: s.pnl,
-    fill: SET_META[s.set.id].color,
+  const comparisonData = strategySets.map((set) => ({
+    name: set.name,
+    pnl: set.baseline_pnl,
+    fill: SET_META[set.id]?.color,
   }));
 
   const healthRows = strategySets.flatMap((set) =>
@@ -95,7 +95,7 @@ export default function PortfolioView({
       <div
         style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 14 }}
       >
-        <PnlComparisonChart data={comparisonData} currentTs={currentTs} />
+        <PnlComparisonChart data={comparisonData} simulationDateTime={simulationDatetime} />
         <ExecutionHealthList rows={healthRows} currentTs={currentTs} />
       </div>
 
