@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { COLORS, FONT_BODY } from "./config/theme";
 import { useSessionClock } from "./hooks/useSessionClock";
 import { useBaseline } from "./hooks/useBaseline";
+import { useHistoricalTrades } from "./hooks/useHistoricalTrades";
 
 import TopBar from "./components/layout/TopBar";
 import Sidebar from "./components/layout/Sidebar";
@@ -29,6 +30,8 @@ export default function App() {
 
   const { baseline } = useBaseline();
 
+  const { trades } = useHistoricalTrades();
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setTick((t) => t + 1);
@@ -47,6 +50,7 @@ export default function App() {
           currentTs,
           simulationDatetime: baseline?.simulation_datetime,
           strategySets: baseline?.strategy_sets ?? [],
+          historicalTrades: trades,
         }
       : {};
 

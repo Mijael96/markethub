@@ -25,6 +25,7 @@ export default function PortfolioView({
   currentTs,
   simulationDatetime,
   strategySets,
+  historicalTrades
 }) {
   const { tape, getJitterFor, isSetRecentlyActive, tapeMax } =
     useLiveTape(simIndex);
@@ -99,7 +100,7 @@ export default function PortfolioView({
         <ExecutionHealthList rows={healthRows} currentTs={currentTs} />
       </div>
 
-      <LiveTapePanel tape={tape} />
+      <LiveTapePanel trades={historicalTrades} />
     </div>
   );
 }
