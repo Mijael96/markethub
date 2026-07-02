@@ -1,0 +1,130 @@
+[
+  {
+    "symbol": "AL30",
+    "name": "Bonar 2030",
+    "type": "bono",
+    "currency": "ARS",
+    "ref_price": 62500.0,
+    "tick": 5.0
+  },
+  {
+    "symbol": "GD30",
+    "name": "Global 2030",
+    "type": "bono",
+    "currency": "ARS",
+    "ref_price": 71200.0,
+    "tick": 5.0
+  },
+  {
+    "symbol": "AL30D",
+    "name": "Bonar 2030 (USD)",
+    "type": "bono",
+    "currency": "USD",
+    "ref_price": 58.4,
+    "tick": 0.05
+  },
+  {
+    "symbol": "GD30D",
+    "name": "Global 2030 (USD)",
+    "type": "bono",
+    "currency": "USD",
+    "ref_price": 66.1,
+    "tick": 0.05
+  },
+  {
+    "symbol": "AAPL.BA",
+    "name": "Apple CEDEAR",
+    "type": "cedear",
+    "currency": "ARS",
+    "ref_price": 28950.0,
+    "tick": 5.0
+  },
+  {
+    "symbol": "TSLA.BA",
+    "name": "Tesla CEDEAR",
+    "type": "cedear",
+    "currency": "ARS",
+    "ref_price": 19880.0,
+    "tick": 5.0
+  },
+  {
+    "symbol": "KO.BA",
+    "name": "Coca-Cola CEDEAR",
+    "type": "cedear",
+    "currency": "ARS",
+    "ref_price": 9120.0,
+    "tick": 1.0
+  },
+  {
+    "symbol": "MELI.BA",
+    "name": "MercadoLibre CEDEAR",
+    "type": "cedear",
+    "currency": "ARS",
+    "ref_price": 41500.0,
+    "tick": 5.0
+  },
+  {
+    "symbol": "AAPL",
+    "name": "Apple Inc (underlying)",
+    "type": "equity",
+    "currency": "USD",
+    "ref_price": 224.3,
+    "tick": 0.01
+  },
+  {
+    "symbol": "TSLA",
+    "name": "Tesla Inc (underlying)",
+    "type": "equity",
+    "currency": "USD",
+    "ref_price": 333.1,
+    "tick": 0.01
+  },
+  {
+    "symbol": "MEP",
+    "name": "Dolar MEP",
+    "type": "fx",
+    "currency": "ARS",
+    "ref_price": 1185.0,
+    "tick": 0.5
+  },
+  {
+    "symbol": "CCL",
+    "name": "Dolar Cable (CCL)",
+    "type": "fx",
+    "currency": "ARS",
+    "ref_price": 1212.0,
+    "tick": 0.5
+  },
+  {
+    "symbol": "USD.MAY",
+    "name": "Dolar Mayorista",
+    "type": "fx",
+    "currency": "ARS",
+    "ref_price": 1078.0,
+    "tick": 0.25
+  },
+  {
+    "symbol": "DLR/JUN26",
+    "name": "Futuro Dolar Junio 26",
+    "type": "futuro",
+    "currency": "ARS",
+    "ref_price": 1192.0,
+    "tick": 0.5
+  },
+  {
+    "symbol": "ORO/AGO26",
+    "name": "Futuro Oro Agosto 26",
+    "type": "futuro",
+    "currency": "USD",
+    "ref_price": 2415.0,
+    "tick": 0.5
+  },
+  {
+    "symbol": "RFX20/SEP26",
+    "name": "Futuro Indice Rofex Sep 26",
+    "type": "futuro",
+    "currency": "ARS",
+    "ref_price": 2350000.0,
+    "tick": 50.0
+  }
+]

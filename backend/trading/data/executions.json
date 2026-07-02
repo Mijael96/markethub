@@ -1,0 +1,184 @@
+[
+  {
+    "id": "exec-carni-al30",
+    "set_id": "set-carnicero",
+    "name": "Carnicero - Faena AL30",
+    "type": "mm_bonos_cedears",
+    "status": "running",
+    "instruments": [
+      "AL30"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 10000,
+      "quote_spread_bps": 25,
+      "risk_limit": 50000000
+    }
+  },
+  {
+    "id": "exec-carni-gd30",
+    "set_id": "set-carnicero",
+    "name": "Carnicero - Faena GD30",
+    "type": "mm_bonos_cedears",
+    "status": "paused",
+    "instruments": [
+      "GD30"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 8,
+      "risk_limit": 15000000
+    }
+  },
+  {
+    "id": "exec-carni-aapl",
+    "set_id": "set-carnicero",
+    "name": "Carnicero - Milanesa AAPL",
+    "type": "mm_bonos_cedears",
+    "status": "running",
+    "instruments": [
+      "AAPL.BA"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 18,
+      "risk_limit": 50000000
+    }
+  },
+  {
+    "id": "exec-carni-meli",
+    "set_id": "set-carnicero",
+    "name": "Carnicero - Asado MELI",
+    "type": "mm_bonos_cedears",
+    "status": "running",
+    "instruments": [
+      "MELI.BA"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 8,
+      "risk_limit": 15000000
+    }
+  },
+  {
+    "id": "exec-tobo-mepccl",
+    "set_id": "set-tobogan",
+    "name": "Tobogan - Resbalon MEP/CCL",
+    "type": "arb_dolar_cable",
+    "status": "running",
+    "instruments": [
+      "MEP",
+      "CCL"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 8,
+      "risk_limit": 50000000
+    }
+  },
+  {
+    "id": "exec-tobo-maycable",
+    "set_id": "set-tobogan",
+    "name": "Tobogan - Caida Libre May/Cable",
+    "type": "arb_dolar_cable",
+    "status": "running",
+    "instruments": [
+      "USD.MAY",
+      "CCL"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 10000,
+      "quote_spread_bps": 25,
+      "risk_limit": 15000000
+    }
+  },
+  {
+    "id": "exec-doble-aapl",
+    "set_id": "set-doble",
+    "name": "Doble - Manzana Podrida",
+    "type": "arb_cedears_underlying",
+    "status": "paused",
+    "instruments": [
+      "AAPL.BA",
+      "AAPL",
+      "CCL"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 25,
+      "risk_limit": 30000000
+    }
+  },
+  {
+    "id": "exec-doble-tsla",
+    "set_id": "set-doble",
+    "name": "Doble - Chispa Tesla",
+    "type": "arb_cedears_underlying",
+    "status": "running",
+    "instruments": [
+      "TSLA.BA",
+      "TSLA",
+      "CCL"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 20000,
+      "quote_spread_bps": 8,
+      "risk_limit": 30000000
+    }
+  },
+  {
+    "id": "exec-fierro-dlr",
+    "set_id": "set-fierro",
+    "name": "Fierro - Soplete Dolar",
+    "type": "trend_futuros",
+    "status": "running",
+    "instruments": [
+      "DLR/JUN26"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 25,
+      "risk_limit": 50000000
+    }
+  },
+  {
+    "id": "exec-fierro-oro",
+    "set_id": "set-fierro",
+    "name": "Fierro - Brasa Oro",
+    "type": "trend_futuros",
+    "status": "running",
+    "instruments": [
+      "ORO/AGO26"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 5000,
+      "quote_spread_bps": 18,
+      "risk_limit": 50000000
+    }
+  },
+  {
+    "id": "exec-fierro-rfx",
+    "set_id": "set-fierro",
+    "name": "Fierro - Yunque Indice",
+    "type": "trend_futuros",
+    "status": "running",
+    "instruments": [
+      "RFX20/SEP26"
+    ],
+    "started_at": "2026-06-18T14:00:00Z",
+    "params": {
+      "max_position": 10000,
+      "quote_spread_bps": 18,
+      "risk_limit": 15000000
+    }
+  }
+]
